@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+  Policy
+{% endblock title %}
+<style>
+    @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.card {
+    animation: fadeIn 1s ease-in;
+}
+.container {
+    background-color: #f8f9fa;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+</style>
+
+{% block content %}
+<!-- policy start -->
+<div class="container mt-4 mb-4">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-lg p-4">
+                <h2 class="text-center text-primary mb-4">Our Policy</h2>
+                <p class="lead text-center mb-4">Please review our company policy to understand our procedures and services.</p>
+
+                <div class="policy-section mb-5">
+                    <div class="policy-item">
+                        <h4 class="text-info">1. Privacy Policy</h4>
+                        <p>We respect your privacy. All personal information collected is handled in compliance with data protection laws. We do not share your details with third parties unless required by law.</p>
+                    </div>
+                    <div class="policy-item">
+                        <h4 class="text-info">2. Refund and Return Policy</h4>
+                        <p>We strive to provide the best service. If you are not satisfied with your purchase, please contact us within 24 hours to process a refund or return, based on the circumstances.</p>
+                    </div>
+                    <div class="policy-item">
+                        <h4 class="text-info">3. Delivery Policy</h4>
+                        <p>All orders are processed and delivered within 3-5 business days. We ensure that your products are handled with care. Delivery charges will be calculated during checkout.</p>
+                    </div>
+                    <div class="policy-item">
+                        <h4 class="text-info">4. Cancellation Policy</h4>
+                        <p>If you wish to cancel your order, please do so within 12 hours of placing it. Cancellations made after 12 hours will be subject to a cancellation fee.</p>
+                    </div>
+                    <div class="policy-item">
+                        <h4 class="text-info">5. Customer Support</h4>
+                        <p>If you have any issues with your order or need assistance, please contact our customer support team. We are available 7 days a week from 9 AM to 6 PM.</p>
+                    </div>
+                    <div class="policy-item">
+                        <h4 class="text-info">6. Modification of Policies</h4>
+                        <p>We reserve the right to change these policies at any time. All changes will be updated here, and we encourage you to review them regularly.</p>
+                    </div>
+                </div>
+
+                <p class="text-center mt-4">For any questions or concerns, please feel free to reach out to us. Thank you for choosing our services!</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- policy end -->
+{% endblock content %}

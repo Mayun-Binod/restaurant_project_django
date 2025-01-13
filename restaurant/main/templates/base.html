@@ -37,6 +37,12 @@
    <!-- customize css-->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="{% static 'css/s.css' %}">
+   <style>
+      .active-ho{
+            background: green !important;
+            text-decoration: underline !important; 
+      }
+   </style>
 </head>
 
 <body>
@@ -51,27 +57,35 @@
          </button>
          <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-               <li class="nav-item ">
+               <li class="nav-item {% if request.path == '/' %}active-ho{% endif %}">
                   <a class="nav-link" href="{% url 'index' %}">Home</a>
                </li>
                <li class="nav-item">
-                  <a class="nav-link" href="{% url 'about' %}">About Us</a>
+                  <a class="nav-link {% if request.path == '/about/' %}active-ho{% endif %}" href="{% url 'about' %}">About Us</a>
                </li>
                <li class="nav-item">
-                  <a class="nav-link" href="{% url 'menu' %}">Our Menu</a>
+                  <a class="nav-link {% if request.path == '/menu/' %}active-ho{% endif %}" href="{% url 'menu' %}">Our Menu</a>
                </li>
                <li class="nav-item">
-                  <a class="nav-link" href="{% url 'service' %}">Our Services</a>
+                  <a class="nav-link {% if request.path == '/service/' %}active-ho{% endif %}" href="{% url 'service' %}">Our Services</a>
                </li>
 
 
             </ul>
-
+            <div class="d-flex gap-4 px-0">
+               <a href=""><button class="btn">
+                  Login
+                </button></a>
+                <a href="{% url 'register' %}"><button class="btn">
+                  Register
+                </button></a>
+              </div>
+           </div>
             <div class="icon_ho">
 
-               <a href="https://www.facebook.com/sujan.thadarai" target="_blank"><i class="fa-brands fa-facebook"></i></a>
-               <a href="#"><i class="fa-brands fa-instagram"></i></a>
-               <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+               <a href="https://www.facebook.com" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+               <a href="https://www.instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+               <a href="https://www.tiktok.com" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
             </div>
 
             <a href="{% url 'contact' %}"><button class="custom-btn btn-1">Contact Us</button></a>
@@ -89,74 +103,75 @@
    {% endblock content %}
    
 
+
     <!-- footer section start -->
     <div class="footer_section layout_padding"> 
-        <div class="container-fluid">
-           <div class="row">
-              <div class="col-lg-3 col-sm-6">
-                 <h3 class="useful_text">About</h3>
-                 <p class="footer_text">We at <b style="font: bold;">MOMOS</b> are passionate about bringing you 
-                    the authentic taste of Nepal through our momos. Made with fresh, high-quality 
-                    ingredients and following traditional recipes, 
-                    our momos are bursting with flavor and sure to tantalize your taste buds. </p>
-              </div>
-              <div class="col-lg-3 col-sm-6">
-                 <h3 class="useful_text"><b style="color: #f76d37;">M</b>OMOS</h3>
-                 <div class="footer_menu">
-                    <ul>
-                       <li><a href="">Home</a></li>
-                       <li><a href="">About Us</a></li>
-                       <li><a href="">Our Menu</a></li>
-                       <li><a href="">Our Services</a></li>
-                       <li><a href="">Contact Us</a></li>
-                    </ul>
-                 </div>
-              </div>
-              <div class="col-lg-3 col-sm-6">
-                 <h3 class="useful_text">Legals</h3>
-                 <div class="footer_menu">
-                    <ul>
-                       <li><a href="#">Terms and conditions</a></li>
-                       <li><a href="#">Privacy</a></li>
-                       <li><a href="#">Policy</a></li>
-                       <li><a href="#">Support</a></li>
-                    </ul>
-                 </div>
-              </div>
-  
-              <div class="col-lg-3 col-sm-6">
-                 <h1 class="useful_text">Contact Us</h1>
-                 <div class="location_text">
-                    <ul>
-                       <li>
-                          <a href="#">
-                             <i class="fa fa-map-marker" aria-hidden="true"></i><span class="padding_left_10">Address :
-                                Vyas-8, Tanahun</span>
-                          </a>
-                       </li>
-                       <li>
-                          <a href="#">
-                             <i class="fa fa-phone" aria-hidden="true"></i><span class="padding_left_10">Call :
-                                +9779816107823</span>
-                          </a>
-                       </li>
-                       <li>
-                          <a href="#">
-                             <i class="fa fa-envelope" aria-hidden="true"></i><span class="padding_left_10">Email :
-                                sujanthadarai710@@gmail.com</span>
-                          </a>
-                       </li>
-                    </ul>
-                 </div>
-              </div>
-           </div>
-        </div>
-     </div>
-     <!-- footer section end -->
+      <div class="container-fluid">
+         <div class="row">
+            <div class="col-lg-3 col-sm-6">
+               <h3 class="useful_text">About</h3>
+               <p class="footer_text">We at <b style="font: bold;">MOMOS</b> are passionate about bringing you 
+                  the authentic taste of Nepal through our momos. Made with fresh, high-quality 
+                  ingredients and following traditional recipes, 
+                  our momos are bursting with flavor and sure to tantalize your taste buds. </p>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+               <h3 class="useful_text"><b style="color: #f76d37;">M</b>OMOS</h3>
+               <div class="footer_menu">
+                  <ul>
+                     <li><a href="{% url 'index' %}">Home</a></li>
+                     <li><a href="{% url 'about' %}">About Us</a></li>
+                     <li><a href="{% url 'menu' %}">Our Menu</a></li>
+                     <li><a href="{% url 'service' %}">Our Services</a></li>
+                     <li><a href="{% url 'contact' %}">Contact Us</a></li>
+                  </ul>
+               </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+               <h3 class="useful_text">Legals</h3>
+               <div class="footer_menu">
+                  <ul>
+                     <li><a href="{% url 'terms' %}">Terms and conditions</a></li>
+                     <li><a href="{% url 'privacy' %}">Privacy</a></li>
+                     <li><a href="{% url 'policy' %}">Policy</a></li>
+                     <li><a href="{% url 'support' %}">Support</a></li>
+                  </ul>
+               </div>
+            </div>
+
+            <div class="col-lg-3 col-sm-6">
+               <h1 class="useful_text">Contact Us</h1>
+               <div class="location_text">
+                  <ul>
+                     <li>
+                        <a href="https://maps.app.goo.gl/jH71MsEKS9k74Xzt5" target="_blank">
+                           <i class="fa fa-map-marker" aria-hidden="true"></i><span class="padding_left_10">Address :
+                              Triyuga-13, Gaighat</span>
+                        </a>
+                     </li>
+                     <li>
+                        <a href="tel:+9779860591674" target="_blank">
+                           <i class="fa fa-phone" aria-hidden="true"></i><span class="padding_left_10">Call :
+                              +9779860591674</span>
+                        </a>
+                     </li>
+                     <li>
+                        <a href="mailto:shresthabinod334@gmail.com" target="_blank">
+                           <i class="fa fa-envelope" aria-hidden="true"></i><span class="padding_left_10">Email :
+                              shresthabinod334@gmail.com</span>
+                        </a>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!-- footer section end -->
      <!-- copyright section start -->
      <div class="copyright_section">
         <div class="container">
-           <p class="copyright_text">2023 All Rights Reserved. Design by <a href="#">Sujan</a></p>
+           <p class="copyright_text">{{date.year}} All Rights Reserved. Design by <a href="#">Binod Shrestha</a></p>
         </div>
      </div>
      <!-- copyright section end -->

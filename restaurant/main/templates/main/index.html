@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static %}
 {% block title %}
   Index
 {% endblock title %}
@@ -9,7 +10,6 @@
       background-color:orange !important;
    }
 </style>
-  
    <!-- banner section start -->
    <div class="banner_section layout_padding">
       <div class="container">
@@ -83,8 +83,6 @@
          </div>
       </div>
    </div>
-
-
    <!-- services section start -->
       <div class="services_section layout_padding">
          <div class="container">
@@ -116,7 +114,7 @@
                   <div class="col-lg-4 col-sm-12 col-md-4">
                      <div class="box_main">
                         <div class="house_icon">
-                           <img src="{% static 'images/party.png' %}'" class="image_1">
+                           <img src="{% static 'images/party.png' %}" class="image_1">
                            <img src="{% static 'images/party2.png' %}" class="image_2">
                         </div>
                         <h3 class="decorate_text">Private Party</h3>
@@ -160,7 +158,6 @@
             {% endfor %} 
          </ul>
       </div>
-
       <div class="tab-content active-tab ">
          <div class="container" id="hello">
             <div class="row">
@@ -170,13 +167,11 @@
                      <p>
                         <img src="{{i.image.url}}">
                      </p>
-
                   </div>
                      <div class="row-md-2">
                         <span>{{i.name}}</span>
                         <div class="card-price">रु{{i.price}}</div>
                      </div>
-   
                </div>
                {% endfor %}
             </div>
@@ -211,9 +206,9 @@
                         <div class="row">
                            <div class="col-md-12">
                               <div class="testimonial_section_2">
-                                 <h4 class="client_name_text" >Sujan Thadarai
+                                 <h4 class="client_name_text" >Binod Shrestha
                                     <span class="quick_icon">
-                                    <img src="{% static 'images/sujan.png' %}">
+                                    <img src="{% static 'images/binod.jpg' %}">
                                  </span>
                               </h4>
                                  <p class="customer_text">
@@ -236,9 +231,9 @@
                         <div class="row">
                            <div class="col-md-12">
                               <div class="testimonial_section_2">
-                                 <h4 class="client_name_text">Bikram
+                                 <h4 class="client_name_text">Subash Tharu
                                     <span class="quick_icon">
-                                    <img src="">
+                                    <img src="{% static 'images/subash.jpg' %}">
                                  </span>
                               </h4>
                                  <p class="customer_text">Momos have always been a favorite comfort food, but yours are on another level! 
@@ -258,9 +253,9 @@
                         <div class="row">
                            <div class="col-md-12">
                               <div class="testimonial_section_2">
-                                 <h4 class="client_name_text">Prabesh
+                                 <h4 class="client_name_text">Sanjeep Mehta
                                     <span class="quick_icon">
-                                    <img src="">
+                                    <img src="{% static 'images/sanjeep.jpg' %}">
                                  </span>
                               </h4>
                                  <p class="customer_text">
@@ -324,5 +319,6 @@
       </div>
    </div>
    <!-- contact section end -->
-
+    
    {% endblock content %}
+

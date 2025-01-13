@@ -1,5 +1,6 @@
 from django.shortcuts import render,redirect
 from .models import Contact,Category,Momo
+from datetime import datetime
 # Create your views here.
 def index(request):
     cate=Category.objects.all()
@@ -28,7 +29,26 @@ def about(request):
 
 def service(request):
     return render(request,'main/services.html')
+
 def menu(request):
     return render(request,'main/menu.html')
+
 def contact(request):
     return render(request,'main/contact.html')
+
+def terms(request):
+    return render(request,'main/terms.html')
+
+def privacy(request):
+    return render(request,'main/privacy.html')
+
+def policy(request):
+    return render(request,'main/policy.html')
+
+def support(request):
+    return render(request,'main/support.html')
+
+    # ------------------------------auth part-----------------------------
+
+def register(request):
+    return render(request,'auth/register.html')

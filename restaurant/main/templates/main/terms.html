@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+  Terms and Conditions
+{% endblock title %}
+<style>
+    @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.card {
+    animation: fadeIn 1s ease-in;
+}
+
+</style>
+
+{% block content %}
+<!-- terms and condition start -->
+<div class="container mt-4 mb-4">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-lg p-4">
+                <h2 class="text-center text-primary mb-4">Terms and Conditions</h2>
+                <p class="lead text-center mb-4">Please read through the following terms and conditions carefully before using our services.</p>
+
+                <div class="terms-section mb-5">
+                    <div class="term-item">
+                        <h4 class="text-success">1. Food Quality and Safety</h4>
+                        <p>We ensure the highest standards of food safety and hygiene. Please inform us of any allergies before placing an order. We are not responsible for undisclosed allergies.</p>
+                    </div>
+                    <div class="term-item">
+                        <h4 class="text-success">2. Payment Policy</h4>
+                        <p>All payments must be made in full at the time of ordering. Refunds will be issued only for valid complaints, such as incorrect or incomplete orders.</p>
+                    </div>
+                    <div class="term-item">
+                        <h4 class="text-success">3. Dining Etiquette</h4>
+                        <p>Please respect the environment and other guests. Any intentional damage to property may result in penalties.</p>
+                    </div>
+                    <div class="term-item">
+                        <h4 class="text-success">4. Reservation and Cancellation</h4>
+                        <p>Reservations are recommended for large groups. Cancellations should be made at least 2 hours in advance to avoid charges.</p>
+                    </div>
+                    <div class="term-item">
+                        <h4 class="text-success">5. Liability</h4>
+                        <p>The restaurant is not responsible for lost or stolen items. Please keep your belongings secure.</p>
+                    </div>
+                    <div class="term-item">
+                        <h4 class="text-success">6. Changes to Terms</h4>
+                        <p>We reserve the right to modify these terms at any time without prior notice. Please review them regularly.</p>
+                    </div>
+                </div>
+
+                <p class="text-center mt-4">For any questions or concerns, feel free to contact us. Thank you for choosing <strong>Momo Delight</strong>.</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- terms and condition end -->
+{% endblock content %}
+

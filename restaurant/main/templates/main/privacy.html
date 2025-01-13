@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+  Support
+{% endblock title %}
+<style>
+    .policy-section {
+    background-color: #f8f9fa;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+</style>
+
+{% block content %}
+<!-- support start -->
+<div class="container mt-4 mb-4">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-lg p-4">
+                <h2 class="text-center text-primary mb-4">Customer Support</h2>
+                <p class="lead text-center mb-4">We are here to assist you with any questions or issues you may have. Please feel free to contact us!</p>
+
+            
+               
+
+                <!-- Frequently Asked Questions -->
+                <div class="faq-section mt-5">
+                    <h4 class="text-info">Frequently Asked Questions</h4>
+                    <div class="faq-item">
+                        <h5 class="font-weight-bold">1. How can I reset my password?</h5>
+                        <p>Click on the 'Forgot Password' link on the login page, and follow the instructions to reset your password.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h5 class="font-weight-bold">2. How do I track my order?</h5>
+                        <p>Once your order is shipped, you will receive an email with a tracking number. Use it to track your order.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h5 class="font-weight-bold">3. How can I change my delivery address?</h5>
+                        <p>Please contact our customer support team within 24 hours of placing your order to change the delivery address.</p>
+                    </div>
+                </div>
+
+                <p class="text-center mt-4">For more assistance, feel free to reach out to us. We're here to help!</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- support end -->
+{% endblock content %}
