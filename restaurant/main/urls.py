@@ -12,4 +12,5 @@ urlpatterns = [
     path('policy/',policy, name='policy'),
     # ------------------------------auth part-----------------------------
     path("register/",register,name="register"),
+    path('log_in/',log_in,name='log_in'),
 ]

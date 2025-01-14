@@ -1,6 +1,12 @@
 from django.shortcuts import render,redirect
 from .models import Contact,Category,Momo
 from datetime import datetime
+from django.contrib import messages
+
+from django.contrib.auth.models import User
+from django.contrib.auth.password_validation import validate_password
+from django.core.exceptions import ValidationError
+import re
 # Create your views here.
 def index(request):
     cate=Category.objects.all()
@@ -51,4 +57,48 @@ def support(request):
     # ------------------------------auth part-----------------------------
 
 def register(request):
-    return render(request,'auth/register.html')
+
+    if request.method == 'POST':
+        fname =request.POST['first_name']
+        lname=request.POST['last_name']
+        username=request.POST['user_name']
+        email=request.POST['email']
+        password=request.POST['password']
+        password1=request.POST['password1']
+
+        if password ==password1:
+            try:
+                validate_password(password)
+
+                if User.objects.filter(username=username).exists():
+                    messages.error(request,"username already exists!!")
+                    return redirect('register')
+                
+                if User.objects.filter(email=email).exists():
+                    messages.error(request,"email already exists!!")
+                    return redirect('register')
+                
+                if not re.search(r'[A-Z]',password):
+                    messages.error(request,"at least one upper case")
+                    return redirect('register')
+                
+                if not re.search(r'\d',password):
+                    messages.error(request,"at least one numeric case")
+                    return redirect('register')
+                                  
+                User.objects.create_user(first_name=fname,last_name=lname,username=username,email=email,password=password)
+                messages.success(request,'register successfully !!')
+                return redirect('log_in')
+            except ValidationError as e:
+                for error in  e.messages:
+                    messages.error(request,error)
+                return redirect("register")    
+        else:
+            messages.error(request,"your password and confirm password does not match")
+            return redirect('register')
+
+    return render(request, "auth/register.html")
+
+
+def log_in(request):
+    return render(request,'auth/login.html')
