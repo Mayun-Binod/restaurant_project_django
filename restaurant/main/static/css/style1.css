@@ -1,0 +1,85 @@
+/* .navActive {
+    
+    color: red !important;
+    border-bottom: 2px solid red;
+
+} */
+
+.navbar-nav .nav-item .nav-link.navActive {
+    color: red !important;
+    border-bottom: 2px solid red !important;
+
+}
+
+/* Facebook Hover */
+.icon_ho .myfb:hover {
+    color: #1877F2 !important;
+    /* Facebook Blue */
+}
+
+/* Instagram Hover */
+.icon_ho .myinsta:hover {
+    color: #E4405F !important;
+    /* Instagram Red-Pink */
+}
+
+/* TikTok Hover (Dark base with possible accent colors) */
+.icon_ho .mytiktok:hover {
+    color: #69C9D0 !important;
+    /* TikTok Turquoise (for accent) */
+}
+
+/* for top items [active garna] */
+.active_ho {
+    background-color: red !important;
+}
+
+/* for auth button[login and signup button] */
+/* From Uiverse.io by zanina-yassine */
+.auth_btn {
+    min-width: 90px;
+
+    position: relative;
+    cursor: pointer;
+
+    padding: 8px 10px;
+    border: 0;
+    border-radius: 7px;
+
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+    background: radial-gradient(ellipse at bottom,
+            rgba(71, 81, 92, 1) 0%,
+            rgba(11, 21, 30, 1) 45%);
+
+    color: rgb(255, 255, 255, 0.66);
+
+    transition: all 1s cubic-bezier(0.15, 0.83, 0.66, 1);
+}
+
+.auth_btn::before {
+    content: "";
+    width: 70%;
+    height: 1px;
+
+    position: absolute;
+    bottom: 0;
+    left: 15%;
+
+    background: rgb(255, 255, 255);
+    background: linear-gradient(90deg,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 1) 50%,
+            rgba(255, 255, 255, 0) 100%);
+    opacity: 0.2;
+
+    transition: all 1s cubic-bezier(0.15, 0.83, 0.66, 1);
+}
+
+.auth_btn:hover {
+    color: rgb(255, 255, 255, 1);
+    transform: scale(1.1) translateY(-3px);
+}
+
+.auth_btn:hover::before {
+    opacity: 1;
+}

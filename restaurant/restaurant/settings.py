@@ -40,10 +40,15 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 ]
 
-EXTERNAL_APP=[
-    'main'
+#=====Our(custom) apps ==========
+EXTERNAL_APPS = [
+    'main',
+    'phonenumber_field',
 ]
-INSTALLED_APPS.extend(EXTERNAL_APP)
+
+#Now, add our apps into default apps
+INSTALLED_APPS.extend(EXTERNAL_APPS)
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -67,7 +72,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'main.current_time.current',
+                'main.current_time.current',        #this is our custom function for datetime
             ],
         },
     },
@@ -122,10 +127,19 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = 'static/'
-MEDIA_ROOT=BASE_DIR/'media'
-MEDIA_URL='/media/'
+MEDIA_ROOT = BASE_DIR/'media'
+MEDIA_URL = '/media/'
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# email set up in django 
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'cresthabeenod30@gmail.com'
+EMAIL_HOST_PASSWORD = 'ypzj xzuh kxgv bdys'

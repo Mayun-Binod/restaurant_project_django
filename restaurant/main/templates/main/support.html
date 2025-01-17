@@ -1,49 +1,50 @@
 {% extends "base.html" %}
-{% load static %}
 {% block title %}
-  Support
+support
 {% endblock title %}
-<style>
-    @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-.card {
-    animation: fadeIn 1s ease-in;
-}
-
-</style>
 {% block content %}
-<!-- support start -->
-<div class="container mt-4 mb-4">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card shadow-lg p-4">
-                <h2 class="text-center text-primary mb-4">Customer Support</h2>
-                <p class="lead text-center mb-4">We are here to assist you with any questions or issues you may have. Please feel free to contact us!</p>
+<div class="container mt-5">
+    <h1 class="text-center">Customer Support</h1>
+    <p class="lead text-center">We're here to assist you with any inquiries or issues you may have.</p>
+    <hr>
 
-                <!-- Frequently Asked Questions -->
-                <div class="faq-section mt-5">
-                    <h4 class="text-info">Frequently Asked Questions</h4>
-                    <div class="faq-item">
-                        <h5 class="font-weight-bold">1. How can I reset my password?</h5>
-                        <p>Click on the 'Forgot Password' link on the login page, and follow the instructions to reset your password.</p>
-                    </div>
-                    <div class="faq-item">
-                        <h5 class="font-weight-bold">2. How do I track my order?</h5>
-                        <p>Once your order is shipped, you will receive an email with a tracking number. Use it to track your order.</p>
-                    </div>
-                    <div class="faq-item">
-                        <h5 class="font-weight-bold">3. How can I change my delivery address?</h5>
-                        <p>Please contact our customer support team within 24 hours of placing your order to change the delivery address.</p>
-                    </div>
-                </div>
+    <h3>1. Frequently Asked Questions (FAQs)</h3>
+    <p>If you have a question, please refer to our <strong>Frequently Asked Questions (FAQs)</strong> section below. If
+        your question isn't answered here, feel free to reach out to us directly.</p>
 
-                <p class="text-center mt-4">For more assistance, feel free to reach out to us. We're here to help!</p>
-            </div>
-        </div>
-    </div>
+    <h4>Q: How can I place an order?</h4>
+    <p>A: You can place an order online through our website, or you can call us directly to place an order.</p>
+
+    <h4>Q: Do you offer delivery?</h4>
+    <p>A: Yes, we offer delivery within the local area. You can place a delivery order on our website or by calling the
+        restaurant.</p>
+
+    <h4>Q: Can I make a reservation for a large group?</h4>
+    <p>A: Yes, we accept group reservations. Please contact us at least 24 hours in advance to ensure availability.</p>
+
+    <h3>2. Contact Us</h3>
+    <p>If you have any questions or require assistance, please reach out to us using one of the following methods:</p>
+
+    <h4>Email:</h4>
+    <p><a href="mailto:deepakbaij0927@gmail.com">contact@restaurant.com</a></p>
+
+    <h4>Phone:</h4>
+    <p>(123) 456-7890</p>
+
+    <h4>Visit Us:</h4>
+    <p>123 Restaurant St., Food City, 12345</p>
+
+    <h3>3. Live Chat</h3>
+    <p>If you prefer immediate assistance, our live chat support is available from 9 AM to 9 PM. Click the chat icon on
+        the bottom right of the page to start a conversation.</p>
+
+    <h3>4. Social Media</h3>
+    <p>Follow us on our social media channels for the latest updates, promotions, and announcements:</p>
+    <ul>
+        <li><a href="https://www.facebook.com/restaurant" target="_blank">Facebook</a></li>
+        <li><a href="https://www.instagram.com/restaurant" target="_blank">Instagram</a></li>
+        <li><a href="https://www.twitter.com/restaurant" target="_blank">Twitter</a></li>
+    </ul>
+
 </div>
-<!-- support end -->
 {% endblock content %}
